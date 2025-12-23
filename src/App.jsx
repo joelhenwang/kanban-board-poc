@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import Task from "./components/Task/Task";
 import Column from "./components/Column/Column";
 import TaskForm from "./components/TaskForm/TaskForm";
@@ -7,10 +8,32 @@ import { useKanban } from "./hooks/useKanban"; // Import your hook
 function App() {
   const { tasks, addTask, deleteTask, moveTask } = useKanban();
 
+  // 1. Theme State
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // 2. Toggle Function
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // 3. Effect: Update the Body class when state changes
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }, [isDarkMode]);
+
   return (
     <>
       <div className="kanban-board">
-        <h1>My kanban</h1>
+        <header>
+          <h1>My kanban</h1>
+          <button className="theme-toggler" onClick={toggleTheme}>
+            {isDarkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
+        </header>
         <div className="columns-board">
           <Column
             title="Todo"

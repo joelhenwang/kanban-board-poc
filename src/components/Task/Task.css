@@ -1,30 +1,64 @@
 .task {
-    padding: 1rem; /* Space inside the box */
-    margin-bottom: 0.5rem; /* Space between this task and the next one */
-    background-color: white; /* Kanban cards are usually distinct from the background */
-    border-radius: 4px; /* Rounded corners look modern */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow to give it depth (3D effect) */
-    border: 1px solid #e0e0e0; /* A light border definition */
-    color: black;
+    background-color: var(--bg-card);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
     cursor: grab;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .task-header {
     display: flex;
-    justify-content: space-between; /* Pushes title to left, button to right */
-    align-items: start;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.delete-btn {
-    background: transparent;
-    border: none;
-    color: #ff4d4f;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
+.task-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
 }
 
-.delete-btn:hover {
-    background-color: #ffe5e5;
-    border-radius: 4px;
+/* Modern Pill Style for Priority */
+.task-tag {
+    align-self: flex-start;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px; /* Pill shape */
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Status variants */
+.task-tag[data-prio="High"] {
+    background-color: var(--color-pastel-orange);
+    color: var(--color-pastel-orange-text);
+}
+
+.task-tag[data-prio="Medium"] {
+    background-color: var(--color-pastel-blue);
+    color: var(--color-pastel-blue-text);
+}
+
+.task-tag[data-prio="Low"] {
+    background-color: var(--color-pastel-green);
+    color: var(--color-pastel-green-text);
 }

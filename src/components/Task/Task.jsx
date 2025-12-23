@@ -26,7 +26,13 @@ function Task(props) {
           <h3> The title is: {props.title} </h3>
           {/* onDelete is a prop of the component Task, the prop function callable */}
         </div>
-        <p> The priority is: {props.prio} </p>
+        <p>
+          {" "}
+          The priority is:{" "}
+          <span className="task-tag" data-prio={props.prio}>
+            {props.prio}
+          </span>{" "}
+        </p>
         <div className="task-actions">
           <MoveLeft
             status={props.status}

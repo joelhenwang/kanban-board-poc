@@ -1,15 +1,40 @@
 .kanban-board {
-    background-color: #333; /* Dark gray background */
-    min-height: 100vh; /* Force it to take full height of screen */
-    padding: 20px; /* Some spacing from the edges */
-    color: white; /* Text color for the h1 title */
-    font-family: sans-serif;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.board-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px; /* Modern sleek look */
+}
+
+.theme-toggler {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
 }
 
 .columns-board {
-    display: flex; /* Makes children (columns) sit side-by-side */
-    flex-direction: row; /* Default is row, but good to be explicit */
-    align-items: flex-start; /* Aligns them to the top */
-    overflow-x: auto; /* Allows scrolling if we have too many columns */
-    justify-content: space-evenly;
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem; /* Space for scrollbar */
 }
