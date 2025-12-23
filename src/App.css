@@ -1,0 +1,15 @@
+.kanban-board {
+    background-color: #333; /* Dark gray background */
+    min-height: 100vh; /* Force it to take full height of screen */
+    padding: 20px; /* Some spacing from the edges */
+    color: white; /* Text color for the h1 title */
+    font-family: sans-serif;
+}
+
+.columns-board {
+    display: flex; /* Makes children (columns) sit side-by-side */
+    flex-direction: row; /* Default is row, but good to be explicit */
+    align-items: flex-start; /* Aligns them to the top */
+    overflow-x: auto; /* Allows scrolling if we have too many columns */
+    justify-content: space-evenly;
+}

@@ -1,0 +1,13 @@
+.column {
+    padding: 0.5rem; /* Space inside the box */
+    background-color: lightslategray; /* Kanban cards are usually distinct from the background */
+    border-radius: 4px; /* Rounded corners look modern */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow to give it depth (3D effect) */
+    border: 1px solid #e0e0e0; /* A light border definition */
+    max-width: 32vw;
+}
+
+h4 {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
