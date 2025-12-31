@@ -34,15 +34,18 @@ function Task(props) {
           </span>{" "}
         </p>
         <div className="task-actions">
-          <MoveLeft
+          {/* <MoveLeft
             status={props.status}
             moveHandler={props.onMoveLeft}
-          ></MoveLeft>
-          <button onClick={props.onDelete}> X </button>
-          <MoveRight
+          ></MoveLeft>*/}
+          <button className="delete-btn" onClick={props.onDelete}>
+            {" "}
+            Delete{" "}
+          </button>
+          {/* <MoveRight
             status={props.status}
             moveHandler={props.onMoveRight}
-          ></MoveRight>
+          ></MoveRight>*/}
         </div>
       </div>
     </>

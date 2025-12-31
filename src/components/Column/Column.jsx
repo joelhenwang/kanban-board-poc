@@ -1,4 +1,4 @@
-import "./Column.css";
+import Box from "../ui/Box";
 
 function Column(props) {
   function handleDragOver(e) {
@@ -11,14 +11,24 @@ function Column(props) {
     props.onDrop(taskId);
   }
 
-  return (
-    <>
-      <div className="column" onDragOver={handleDragOver} onDrop={handleDrop}>
-        <h4>{props.title}</h4>
+  const columnUpperBarColorStyle = {
+    "--upperBarColor": props.color,
+  };
 
-        <div className="content">{props.children}</div>
-      </div>
-    </>
+  return (
+    <Box width="100%" maxWidth="30vw">
+      {/* <div
+        className="column"
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+        style={columnUpperBarColorStyle}
+      >
+      </div>*/}
+
+      <h3>{props.title}</h3>
+
+      <div className="content">{props.children}</div>
+    </Box>
   );
 }
 

@@ -1,20 +1,51 @@
 .task-form {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 50px; /* Pill shape */
     display: flex;
     gap: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Very subtle elegant shadow */
+    width: 100%;
+    max-width: 600px; /* Limit width so it doesn't stretch too far */
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.task-form:focus-within {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
 }
 
 .task-form input {
-    flex-grow: 1; /* Takes up remaining space */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--text-color);
+    outline: none; /* We handle focus on the parent container instead */
 }
 
 .task-form select {
-    padding: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.task-form button {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.task-form button:hover {
+    transform: scale(1.05);
 }

@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 :root {
     /* --- PALETTE: CORE COLORS --- */
     /* We define the raw colors first */
     --color-white: #ffffff;
-    --color-dark: #1f1f1f;
+    --color-dark: #2f2f2f;
     --color-grey-50: #f7f7f7;
     --color-grey-100: #e0e0e0;
     --color-grey-200: #c2c2c2;
@@ -44,15 +46,31 @@ body.dark-theme {
     --bg-card: var(--color-dark);
     --text-primary: var(--color-grey-50);
     --text-secondary: var(--color-grey-200);
-    --border-color: var(--color-grey-800);
+    --border-color: var(--color-grey-200);
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 body {
     margin: 0;
-    background-color: var(--bg-app);
+    background: #0d0d0d;
+    background: -webkit-linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 1) 0%,
+        rgba(33, 33, 33, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 1) 0%,
+        rgba(33, 33, 33, 1) 100%
+    );
+    background: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 1) 0%,
+        rgba(33, 33, 33, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0D0D0D", endColorstr="#212121", GradientType=0);
     color: var(--text-primary);
-    font-family: var(--font-family);
+    font-family: "Inter", sans-serif;
     transition:
         background-color 0.3s ease,
         color 0.3s ease; /* Smooth transition */

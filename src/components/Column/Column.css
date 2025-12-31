@@ -1,18 +1,38 @@
 .column {
-    background-color: var(--bg-column);
-    min-width: 27vw;
-    border-radius: var(--radius-md);
-    padding: 1rem;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    width: 340px;
+    min-height: 400px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    border: 1px solid var(--border-color); /* Subtle definition */
+    gap: 15px;
+    /* Remove old borders/shadows if you want "minimalist" */
+    box-shadow: none;
+    border: 3px solid var(--upperBarColor);
+    position: relative;
+    overflow: hidden; /* Keeps the colored bar contained */
 }
+
+/* The Pastel Accent Bar */
+.column::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--upperBarColor); /* Default fallback */
+}
+
+/* We can style specific columns based on props or nth-child,
+   but for now, let's use the props passed in App.jsx in the next step */
 
 .column h2 {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-secondary);
-    margin: 0 0 0.5rem 0.5rem;
+    margin: 0;
+    margin-bottom: 10px;
 }

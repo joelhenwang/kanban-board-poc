@@ -5,7 +5,7 @@ import Column from "./components/Column/Column";
 import TaskForm from "./components/TaskForm/TaskForm";
 import Box from "./components/ui/Box";
 import Card from "./components/ui/Card";
-
+import Sidebar from "./components/Sidebar/Sidebar"; // Import Sidebar component
 import { useKanban } from "./hooks/useKanban"; // Import your hook
 
 function App() {
@@ -28,42 +28,55 @@ function App() {
     }
   }, [isDarkMode]);
 
-  const appBgStyle = "linear-gradient(180deg,rgba(13, 13, 13, 1) 0%,rgba(33, 33, 33, 1) 100%)"
+  const appBgStyle =
+    "linear-gradient(180deg,rgba(10, 10, 10, 1) 0%,rgba(40, 40, 40, 1) 100%)";
 
   return (
     <div>
-      <Box borderStyle="none" height="96.5vh" background>
-        <h1>Kanban Board</h1>
+      <Box
+        display="flex"
+        flexDirection="row"
+        borderStyle="none"
+        height="96.5vh"
+        background={appBgStyle}
+      >
+        <Sidebar /> {/* Render Sidebar component */}
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
+            flexDirection: "column",
           }}
         >
-          <Column title="To Do">
-            <Card
-              title="Card Title"
-              prio="High"
-              data={{ author: "John Doe" }}
-            />
-          </Column>
-          <Column title="To Do">
-            <Card
-              title="Card Title"
-              prio="High"
-              data={{ author: "John Doe" }}
-            />
-          </Column>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              width: "100%",
+            }}
+          >
+            <Column title="To Do">
+              <Card
+                title="Card Title"
+                prio="High"
+                data={{ author: "John Doe" }}
+              />
+            </Column>
+            <Column title="To Do">
+              <Card
+                title="Card Title"
+                prio="High"
+                data={{ author: "John Doe" }}
+              />
+            </Column>
 
-          <Column title="To Do">
-            <Card
-              title="Card Title"
-              prio="High"
-              data={{ author: "John Doe" }}
-            />
-          </Column>
+            <Column title="To Do">
+              <Card
+                title="Card Title"
+                prio="High"
+                data={{ author: "John Doe" }}
+              />
+            </Column>
+          </div>
         </div>
       </Box>
     </div>
