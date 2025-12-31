@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import Task from "./components/Task/Task";
 import Column from "./components/Column/Column";
 import TaskForm from "./components/TaskForm/TaskForm";
+import Box from "./components/ui/Box";
+import Card from "./components/ui/Card";
+
 import { useKanban } from "./hooks/useKanban"; // Import your hook
 
 function App() {
@@ -25,84 +28,140 @@ function App() {
     }
   }, [isDarkMode]);
 
+  const appBgStyle = "linear-gradient(180deg,rgba(13, 13, 13, 1) 0%,rgba(33, 33, 33, 1) 100%)"
+
   return (
-    <>
-      <div className="kanban-board">
-        <header>
-          <h1>My kanban</h1>
-          <button className="theme-toggler" onClick={toggleTheme}>
-            {isDarkMode ? "☀️ Light" : "🌙 Dark"}
-          </button>
-        </header>
-        <div className="columns-board">
-          <Column
-            title="Todo"
-            onDrop={(taskId) => moveTask(Number(taskId), "todo")}
-          >
-            {/* Interesting engineering to call a function with a setState function as a callable */}
-            {/*
-              In order to avoid an infinte loop of rendering (JS will run immediatelly the function inside 'onClick'),
-              we use an 'arrow function' so that React runs the code inside 'onClick' after it is clicked
-            */}
-            <TaskForm onAdd={addTask} />
-
-            {tasks
-              .filter((t) => t.status === "todo")
-              .map((task) => (
-                <Task
-                  key={task.id}
-                  id={task.id}
-                  title={task.title}
-                  prio={task.prio}
-                  status={"todo"}
-                  onDelete={() => deleteTask(task.id, "todo")}
-                  onMoveRight={() => moveTask(task.id, "inProgress")}
-                ></Task>
-              ))}
+    <div>
+      <Box borderStyle="none" height="96.5vh" background>
+        <h1>Kanban Board</h1>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Column title="To Do">
+            <Card
+              title="Card Title"
+              prio="High"
+              data={{ author: "John Doe" }}
+            />
+          </Column>
+          <Column title="To Do">
+            <Card
+              title="Card Title"
+              prio="High"
+              data={{ author: "John Doe" }}
+            />
           </Column>
 
-          <Column
-            title="In Progress"
-            onDrop={(taskId) => moveTask(Number(taskId), "inProgress")}
-          >
-            {tasks
-              .filter((t) => t.status === "inProgress")
-              .map((task) => (
-                <Task
-                  key={task.id}
-                  id={task.id}
-                  title={task.title}
-                  prio={task.prio}
-                  status={"inProgress"}
-                  onMoveLeft={() => moveTask(task.id, "todo")}
-                  onDelete={() => deleteTask(task.id, "inProgress")}
-                  onMoveRight={() => moveTask(task.id, "complete")}
-                ></Task>
-              ))}
-          </Column>
-
-          <Column
-            title="Completed"
-            onDrop={(taskId) => moveTask(Number(taskId), "complete")}
-          >
-            {tasks
-              .filter((t) => t.status === "complete")
-              .map((task) => (
-                <Task
-                  key={task.id}
-                  id={task.id}
-                  title={task.title}
-                  prio={task.prio}
-                  status={"complete"}
-                  onMoveLeft={() => moveTask(task.id, "inProgress")}
-                  onDelete={() => deleteTask(task.id, "complete")}
-                ></Task>
-              ))}
+          <Column title="To Do">
+            <Card
+              title="Card Title"
+              prio="High"
+              data={{ author: "John Doe" }}
+            />
           </Column>
         </div>
-      </div>
-    </>
+      </Box>
+    </div>
   );
+
+  // return (
+  //   <>
+  //     <div className="kanban-board">
+  //       <header>
+  //         <h1>My kanban</h1>
+  //         <br></br>
+  //         <div
+  //           style={{
+  //             display: "flex",
+  //             flexDirection: "row",
+  //             justifyContent: "space-around",
+  //             justifyItems: "center",
+  //             alignContent: "space-around",
+  //             width: "100%",
+  //           }}
+  //         >
+  //           <TaskForm onAdd={addTask} />
+  //           <button className="theme-toggler" onClick={toggleTheme}>
+  //             {isDarkMode ? "☀️ Light" : "🌙 Dark"}
+  //           </button>
+  //         </div>
+  //       </header>
+  //       <div className="columns-board">
+  //         <Column
+  //           title="Todo"
+  //           onDrop={(taskId) => moveTask(Number(taskId), "todo")}
+  //           color="#ffb7b2"
+  //         >
+  //           {/* Interesting engineering to call a function with a setState function as a callable */}
+  //           {/*
+  //             In order to avoid an infinte loop of rendering (JS will run immediatelly the function inside 'onClick'),
+  //             we use an 'arrow function' so that React runs the code inside 'onClick' after it is clicked
+  //           */}
+
+  //           {tasks
+  //             .filter((t) => t.status === "todo")
+  //             .map((task) => (
+  //               <Task
+  //                 key={task.id}
+  //                 id={task.id}
+  //                 title={task.title}
+  //                 prio={task.prio}
+  //                 status={"todo"}
+  //                 onDelete={() => deleteTask(task.id, "todo")}
+  //                 onMoveRight={() => moveTask(task.id, "inProgress")}
+  //               ></Task>
+  //             ))}
+  //         </Column>
+
+  //         <Column
+  //           title="In Progress"
+  //           onDrop={(taskId) => moveTask(Number(taskId), "inProgress")}
+  //           color="#ffdac1"
+  //         >
+  //           {tasks
+  //             .filter((t) => t.status === "inProgress")
+  //             .map((task) => (
+  //               <Task
+  //                 key={task.id}
+  //                 id={task.id}
+  //                 title={task.title}
+  //                 prio={task.prio}
+  //                 status={"inProgress"}
+  //                 onMoveLeft={() => moveTask(task.id, "todo")}
+  //                 onDelete={() => deleteTask(task.id, "inProgress")}
+  //                 onMoveRight={() => moveTask(task.id, "complete")}
+  //               ></Task>
+  //             ))}
+  //         </Column>
+
+  //         <Column
+  //           title="Completed"
+  //           onDrop={(taskId) => moveTask(Number(taskId), "complete")}
+  //           color="#e2f0cb"
+  //         >
+  //           {tasks
+  //             .filter((t) => t.status === "complete")
+  //             .map((task) => (
+  //               <Task
+  //                 key={task.id}
+  //                 id={task.id}
+  //                 title={task.title}
+  //                 prio={task.prio}
+  //                 status={"complete"}
+  //                 onMoveLeft={() => moveTask(task.id, "inProgress")}
+  //                 onDelete={() => deleteTask(task.id, "complete")}
+  //               ></Task>
+  //             ))}
+  //         </Column>
+  //       </div>
+  //     </div>
+  //   </>
+  // );
 }
 
 export default App;
