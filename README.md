@@ -16,3 +16,11 @@ Note: This will impact Vite dev & build performances.
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Adding a new feature
+
+If you want to add a new feature to your project, you can use the following steps:
+
+1. Create a new file in the `src` directory with the name of your feature.
+2. Import the new file in the `src/index.tsx` file.
+3. Add the new feature to the `App` component.
