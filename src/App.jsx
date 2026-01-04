@@ -4,6 +4,7 @@ import Task from "./components/Task/Task";
 import Column from "./components/Column/Column";
 import TaskForm from "./components/TaskForm/TaskForm";
 import Box from "./components/ui/Box";
+import BoardPage from "./BoardPage/BoardPage";
 import Card from "./components/ui/Card";
 import Sidebar from "./components/Sidebar/Sidebar"; // Import Sidebar component
 import { useKanban } from "./hooks/useKanban"; // Import your hook
@@ -29,7 +30,7 @@ function App() {
   }, [isDarkMode]);
 
   const appBgStyle =
-    "linear-gradient(180deg,rgba(10, 10, 10, 1) 0%,rgba(40, 40, 40, 1) 100%)";
+    "linear-gradient(180deg,rgba(50, 50, 50, 1) 0%, rgba(24, 24, 24, 1) 50%,rgba(40, 40, 40, 1) 100%)";
 
   return (
     <div>
@@ -41,43 +42,7 @@ function App() {
         background={appBgStyle}
       >
         <Sidebar /> {/* Render Sidebar component */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              width: "100%",
-            }}
-          >
-            <Column title="To Do">
-              <Card
-                title="Card Title"
-                prio="High"
-                data={{ author: "John Doe" }}
-              />
-            </Column>
-            <Column title="To Do">
-              <Card
-                title="Card Title"
-                prio="High"
-                data={{ author: "John Doe" }}
-              />
-            </Column>
-
-            <Column title="To Do">
-              <Card
-                title="Card Title"
-                prio="High"
-                data={{ author: "John Doe" }}
-              />
-            </Column>
-          </div>
-        </div>
+        <BoardPage />
       </Box>
     </div>
   );

@@ -8,6 +8,8 @@
     --color-grey-50: #f7f7f7;
     --color-grey-100: #e0e0e0;
     --color-grey-200: #c2c2c2;
+    --color-grey-400: #9e9e9e;
+    --color-grey-600: #757575;
     --color-grey-800: #2d2d2d;
     --color-grey-900: #181818;
 
@@ -52,22 +54,7 @@ body.dark-theme {
 
 body {
     margin: 0;
-    background: #0d0d0d;
-    background: -webkit-linear-gradient(
-        180deg,
-        rgba(13, 13, 13, 1) 0%,
-        rgba(33, 33, 33, 1) 100%
-    );
-    background: -moz-linear-gradient(
-        180deg,
-        rgba(13, 13, 13, 1) 0%,
-        rgba(33, 33, 33, 1) 100%
-    );
-    background: linear-gradient(
-        180deg,
-        rgba(13, 13, 13, 1) 0%,
-        rgba(33, 33, 33, 1) 100%
-    );
+    background: #c2c2c2;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0D0D0D", endColorstr="#212121", GradientType=0);
     color: var(--text-primary);
     font-family: "Inter", sans-serif;

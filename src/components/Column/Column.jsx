@@ -16,7 +16,7 @@ function Column(props) {
   };
 
   return (
-    <Box width="100%" maxWidth="30vw">
+    <Box width="100%" maxWidth="30vw" backgroundColor="#757575">
       {/* <div
         className="column"
         onDragOver={handleDragOver}
@@ -25,9 +25,22 @@ function Column(props) {
       >
       </div>*/}
 
-      <h3>{props.title}</h3>
+      <h3 style={{ marginLeft: 12, color: "white", fontWeight: "lighter" }}>
+        {props.title}
+      </h3>
 
-      <div className="content">{props.children}</div>
+      <div
+        className="content"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          overflowX: "hidden",
+          overflowY: "scroll",
+          maxHeight: "100%",
+        }}
+      >
+        {props.children}
+      </div>
     </Box>
   );
 }
