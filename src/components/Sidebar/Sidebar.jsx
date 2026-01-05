@@ -9,14 +9,17 @@ function Sidebar() {
       display="flex"
       flexDirection="column"
       borderStyle="none"
-      minWidth="300px"
+      minWidth="230px"
+      backgroundColor="#757575"
     >
-      <h3>Boards</h3>
-      <div>
-        {/* list of boards*/}
-        <p>Board 1</p>
+      <Box border="none" backgroundColor="#181818" padding="4px 16px">
+        <h3 style={{ color: "white" }}>Boards</h3>
+      </Box>
+
+      <Box border="none" backgroundColor="#181818" padding="4px 16px">
+        <p style={{ color: "white" }}>Board 1</p>
         <p>Board 2</p>
-      </div>
+      </Box>
       <div>{/* User profile */}</div>
     </Box>
   );

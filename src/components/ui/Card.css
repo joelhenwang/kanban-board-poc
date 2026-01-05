@@ -1,0 +1,13 @@
+.card-container {
+    /* Default state */
+    transform: translateY(0) scale(1);
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.card-container:hover {
+    /* Hover state */
+    transform: translateY(-4px) scale(1.02);
+}

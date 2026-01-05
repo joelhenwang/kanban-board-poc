@@ -12,6 +12,8 @@ function BoardPage() {
         flexDirection: "column",
         flexGrow: 1,
         marginLeft: 16,
+        height: "100%",
+        overflow: "hidden",
       }}
     >
       <Header board_title="Board 1" />

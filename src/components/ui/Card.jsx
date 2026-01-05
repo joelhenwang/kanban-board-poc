@@ -1,3 +1,5 @@
+import "./Card.css";
+
 import Box from "./Box";
 import React from "react";
 import { useState } from "react";
@@ -24,23 +26,29 @@ function Card({ title, prio, data = {} }) {
   };
 
   return (
-    <Box backgroundColor="#181818" borderStyle="none" paddingLeft="16px">
-      <Box height="3px" padding="0" backgroundColor={prioStyle.color}></Box>
-      <h3
-        style={{ color: "white", fontWeight: "lighter", fontSize: "1.05rem" }}
-      >
-        {title}
-      </h3>
+    <div className="card-container">
+      <Box backgroundColor="#181818" borderStyle="none" paddingLeft="16px">
+        <Box height="3px" padding="0" backgroundColor={prioStyle.color}></Box>
+        <h3
+          style={{ color: "white", fontWeight: "lighter", fontSize: "1.05rem" }}
+        >
+          {title}
+        </h3>
 
-      <br></br>
+        <br></br>
 
-      <p style={{ color: "white", fontWeight: "lighter", fontSize: "0.9rem" }}>
-        Priority: <span style={prioStyle}>{prio}</span>{" "}
-      </p>
-      <p style={{ color: "white", fontWeight: "lighter", fontSize: "0.9rem" }}>
-        Author: <span style={authorStyle}>{data.author}</span>
-      </p>
-    </Box>
+        <p
+          style={{ color: "white", fontWeight: "lighter", fontSize: "0.9rem" }}
+        >
+          Priority: <span style={prioStyle}>{prio}</span>{" "}
+        </p>
+        <p
+          style={{ color: "white", fontWeight: "lighter", fontSize: "0.9rem" }}
+        >
+          Author: <span style={authorStyle}>{data.author}</span>
+        </p>
+      </Box>
+    </div>
   );
 }
 
