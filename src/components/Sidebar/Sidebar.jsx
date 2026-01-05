@@ -1,5 +1,6 @@
 import react from "react";
 import Box from "../ui/Box";
+import BoardOption from "./BoardOption";
 
 function Sidebar() {
   const options = ["boards", "tasks"];
@@ -16,10 +17,13 @@ function Sidebar() {
         <h3 style={{ color: "white" }}>Boards</h3>
       </Box>
 
-      <Box border="none" backgroundColor="#181818" padding="4px 16px">
-        <p style={{ color: "white" }}>Board 1</p>
-        <p>Board 2</p>
+      <Box border="none" backgroundColor="#181818" padding="16px 8px">
+        <BoardOption title="Board 1" />
+        <BoardOption title="Board 1" />
+        <BoardOption title="Board 1" />
+        <BoardOption title="Board 1" />
       </Box>
+
       <div>{/* User profile */}</div>
     </Box>
   );

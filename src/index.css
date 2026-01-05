@@ -62,7 +62,28 @@ body {
         background-color 0.3s ease,
         color 0.3s ease; /* Smooth transition */
 }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a transparent;
+}
 
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+}
 a {
     font-weight: 500;
     color: #646cff;

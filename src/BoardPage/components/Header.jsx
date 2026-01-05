@@ -12,7 +12,7 @@ function Header({ board_title }) {
         marginTop: 12,
       }}
     >
-      <h1 style={{ color: "#e3f2fd", fontWeight: "normal" }}>{board_title}</h1>
+      <h1 style={{ color: "white", fontWeight: "normal" }}>{board_title}</h1>
       <br />
       <Menu />
       <br />

@@ -28,7 +28,7 @@ function Card({ title, prio, data = {} }) {
   return (
     <div className="card-container">
       <Box backgroundColor="#181818" borderStyle="none" paddingLeft="16px">
-        <Box height="3px" padding="0" backgroundColor={prioStyle.color}></Box>
+        <Box height="4px" padding="0" backgroundColor={prioStyle.color}></Box>
         <h3
           style={{ color: "white", fontWeight: "lighter", fontSize: "1.05rem" }}
         >
