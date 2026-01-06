@@ -14,7 +14,7 @@ const SleekButton = ({ text, onClick, style }) => {
     backgroundColor: "#111111", // A deep, matte black
     color: "#ffffff", // Crisp white text
     padding: "12px 24px", // Space inside the button (Vertical, Horizontal)
-    fontSize: "14px", // Clean, readable size
+    fontSize: "16px", // Clean, readable size
     fontWeight: "500", // Medium thickness for a premium feel
     borderRadius: "8px", // Rounded corners for a modern look
     border: "none", // Remove the ugly default border

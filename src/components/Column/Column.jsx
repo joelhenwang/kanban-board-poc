@@ -1,5 +1,5 @@
 import Box from "../ui/Box";
-import SleekButton from "../ui/Button";
+import AddButton from "./AddButton";
 import { useState, useRef, useEffect } from "react";
 
 function Column(props) {
@@ -35,7 +35,13 @@ function Column(props) {
   }, [props.children]);
 
   return (
-    <Box width="100%" maxWidth="30vw" backgroundColor="#757575" border="none">
+    <Box
+      overflowY="hidden"
+      width="100%"
+      maxWidth="30vw"
+      backgroundColor="#757575"
+      border="none"
+    >
       {/* <div
         className="column"
         onDragOver={handleDragOver}
@@ -54,17 +60,16 @@ function Column(props) {
         <h3 style={{ marginLeft: 12, color: "white", fontWeight: "lighter" }}>
           {props.title}
         </h3>
-        <SleekButton style={{ backgroundColor: "transparent" }} text="+" />
       </div>
 
       <div
         style={{
           position: "relative",
-          flexGrow: 1,
+          // flexGrow: 1,
           minHeight: 0,
           display: "flex",
           flexDirection: "column",
-          maxHeight: "100%",
+          maxHeight: "calc(100% - 112px)",
         }}
       >
         {/* Top Shadow */}
@@ -88,7 +93,7 @@ function Column(props) {
         <div
           style={{
             position: "absolute",
-            bottom: 48.5,
+            bottom: 19,
             left: 0,
             right: 0,
             height: "40px",
@@ -109,11 +114,16 @@ function Column(props) {
           style={{
             overflowY: "scroll",
             overflowX: "hidden",
-            marginBottom: "48.5px",
+            // marginBottom: "48.5px",
           }}
         >
           {props.children}
         </div>
+        <br />
+      </div>
+
+      <div>
+        <AddButton />
       </div>
     </Box>
   );

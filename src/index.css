@@ -65,6 +65,8 @@ body {
 * {
     scrollbar-width: thin;
     scrollbar-color: #4a4a4a transparent;
+
+    letter-spacing: 1.5px;
 }
 
 *::-webkit-scrollbar {
