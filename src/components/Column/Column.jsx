@@ -1,4 +1,5 @@
 import Box from "../ui/Box";
+import SleekButton from "../ui/Button";
 import { useState, useRef, useEffect } from "react";
 
 function Column(props) {
@@ -42,10 +43,19 @@ function Column(props) {
         style={columnUpperBarColorStyle}
       >
       </div>*/}
-
-      <h3 style={{ marginLeft: 12, color: "white", fontWeight: "lighter" }}>
-        {props.title}
-      </h3>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h3 style={{ marginLeft: 12, color: "white", fontWeight: "lighter" }}>
+          {props.title}
+        </h3>
+        <SleekButton style={{ backgroundColor: "transparent" }} text="+" />
+      </div>
 
       <div
         style={{
