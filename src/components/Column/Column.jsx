@@ -123,7 +123,7 @@ function Column(props) {
       </div>
 
       <div>
-        <AddButton />
+        <AddButton columnOnClick={props.onAddClick} />
       </div>
     </Box>
   );

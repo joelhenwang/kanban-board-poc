@@ -19,7 +19,7 @@ function AddButton({ column, columnOnClick }) {
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={() => columnOnClick}
+        onClick={columnOnClick}
         style={{ cursor: "pointer" }}
       >
         <Box

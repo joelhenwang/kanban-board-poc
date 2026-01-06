@@ -1,7 +1,14 @@
 import Column from "../../components/Column/Column";
 import Card from "../../components/ui/Card";
-
+import Modal from "../../components/ui/Modal";
+import { useState } from "react";
 function Kanban() {
+  const [isAdding, setIsAdding] = useState(false);
+
+  function onAddClick() {
+    setIsAdding(true);
+  }
+
   return (
     <div
       style={{
@@ -14,10 +21,10 @@ function Kanban() {
         overflow: "hidden",
       }}
     >
-      <Column title="To Do">
+      <Column title="To Do" onAddClick={onAddClick}>
         <Card title="Card Title" prio="High" data={{ author: "John Doe" }} />
       </Column>
-      <Column title="In Progress">
+      <Column title="In Progress" onAddClick={onAddClick}>
         <Card title="Card Title" prio="Medium" data={{ author: "John Doe" }} />
         <Card title="Card Title" prio="Medium" data={{ author: "John Doe" }} />
         <Card title="Card Title" prio="Medium" data={{ author: "John Doe" }} />
@@ -29,9 +36,17 @@ function Kanban() {
         <Card title="Card Title" prio="Medium" data={{ author: "John Doe" }} />
       </Column>
 
-      <Column title="Done">
+      <Column title="Done" onAddClick={onAddClick}>
         <Card title="Card Title" prio="Low" data={{ author: "John Doe" }} />
       </Column>
+      <Modal
+        isOpen={isAdding}
+        onClose={() => setIsAdding(false)}
+        title="Create New Task"
+      >
+        <input type="text" placeholder="What needs to be done?" />
+        <button>Save Task</button>
+      </Modal>
     </div>
   );
 }

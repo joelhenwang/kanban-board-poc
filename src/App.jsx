@@ -38,7 +38,7 @@ function App() {
         display="flex"
         flexDirection="row"
         borderStyle="none"
-        height="99.6vh"
+        height="99.5vh"
         background={appBgStyle}
         padding="0px"
         margin="2px"
